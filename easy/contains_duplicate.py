@@ -21,11 +21,21 @@ class Solution:
         # Space: O(1) memory used does not grow with the size of the input
 
         # Sort-first
-        sorted_nums = sorted(nums)
-        for i in range(len(nums) - 1):
-            if sorted_nums[i] == sorted_nums[i + 1]:
-                return True
-        return False
+        # sorted_nums = sorted(nums)
+        # for i in range(len(nums) - 1):
+        #     if sorted_nums[i] == sorted_nums[i + 1]:
+        #         return True
+        # return False
         # Time: O(n log n) because of sorted is n log n. The loop for i in range adds O(n) but since O(2n log n) is still counted as O(n log n)
-
         # Space: O(n) because the memory grows with the input size
+
+        # Set
+        nums_dict = set()
+        for i in range(len(nums)):
+            if nums[i] in nums_dict:
+                return True
+            else:
+                nums_dict.add(nums[i])
+        return False
+        # Time: O(n) since nums[i] in nums_dict is a hash lookup so its O(1)
+        # Space: O(n) since the number of elements in the set grows with the number of input
