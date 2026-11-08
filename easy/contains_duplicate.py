@@ -1,6 +1,6 @@
 # Problem No. 217
 class Solution:
-    def containsDuplicate(self, nums: list[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> int:
         # num_list = {}
         # for num in nums:
         #     if num_list.get(num, 0) == 1:
@@ -30,12 +30,25 @@ class Solution:
         # Space: O(n) because the memory grows with the input size
 
         # Set
+        # nums_dict = set()
+        # for i in range(len(nums)):
+        #     if nums[i] in nums_dict:
+        #         return True
+        #     else:
+        #         nums_dict.add(nums[i])
+        # return False
+        # Time: O(n) since nums[i] in nums_dict is a hash lookup so its O(1)
+        # Space: O(n) since the number of elements in the set grows with the number of input
+
+        # Unfamiliar Variation
         nums_dict = set()
         for i in range(len(nums)):
             if nums[i] in nums_dict:
-                return True
+                return nums[i]
             else:
                 nums_dict.add(nums[i])
-        return False
-        # Time: O(n) since nums[i] in nums_dict is a hash lookup so its O(1)
-        # Space: O(n) since the number of elements in the set grows with the number of input
+        return None
+
+
+solver = Solution()
+print(solver.containsDuplicate(nums=[1, 3, 1, 3, 3]))

@@ -17,7 +17,7 @@ class Solution:
             if nums[i] in nums_dict:
                 count_of_pair += nums_dict[
                     nums[i]
-                ]  # This is beacuse every added identical value can have multiple new pairings
+                ]  # This is because every added identical value can have multiple new pairings
                 nums_dict[nums[i]] += 1
             else:
                 nums_dict[nums[i]] = 1
