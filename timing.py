@@ -6,9 +6,7 @@ data = {}
 
 
 def find_item(n, target):
-    for num in n:
-        if num == target:
-            return True
+    return target in n
 
 
 def timing_check(n, target):
@@ -16,7 +14,7 @@ def timing_check(n, target):
     start_time = time.perf_counter()
     find_item(n, target)
     end_time = time.perf_counter()
-    return f"{n} took {end_time - start_time:.4f} seconds"
+    return f"{n} took {end_time - start_time:.9f} seconds"
 
 
 def run_timing_check(n, target, counts):
@@ -29,7 +27,7 @@ def run_timing_check(n, target, counts):
         total_duration += end_time - start_time
         iterations -= 1
     average_duration = total_duration / counts if counts > 0 else 0.0
-    data.setdefault(len(n), {})[type(n).__name__] = f"{average_duration:.4f} seconds"
+    data.setdefault(len(n), {})[type(n).__name__] = f"{average_duration:.9f} seconds"
 
 
 def print_all():
