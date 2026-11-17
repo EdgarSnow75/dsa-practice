@@ -46,17 +46,18 @@ def loop_binary_search(num_list: list[int], target: int) -> int:
     return -1
 
 
-# Recursive
-def binary_search(nums: list[int], target: int) -> int:
-    if len(nums) == 0:
-        return -1
-    mid = (len(nums) // 2) - 1
-    if nums[mid] == target:
-        return mid + 1
-    if nums[mid] > target:
-        return binary_search(nums[:mid], target)
-    elif nums[mid] < target:
-        return binary_search(nums[mid + 1 :], target)
+# TODO - Fix this on Sunday
+# # Recursive
+# def binary_search(nums: list[int], target: int) -> int:
+#     if len(nums) == 0:
+#         return -1
+#     mid = (len(nums) // 2) - 1
+#     if nums[mid] == target:
+#         return mid + 1
+#     if nums[mid] > target:
+#         return binary_search(nums[:mid], target)
+#     elif nums[mid] < target:
+#         return binary_search(nums[mid + 1 :], target)
 
 
 def main():
