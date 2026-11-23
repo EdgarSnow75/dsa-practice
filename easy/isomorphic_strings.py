@@ -15,14 +15,13 @@ For each iteration,
 """
 
 
-def isIsomorphic(self, s: str, t: str) -> bool:
+def is_isomorphic(s: str, t: str) -> bool:
     tracked_words = {}
     for i in range(len(s)):
         if s[i] not in tracked_words:
             if t[i] in tracked_words.values():
                 return False
             tracked_words[s[i]] = t[i]
-        elif s[i] in tracked_words:
-            if tracked_words[s[i]] != t[i]:
-                return False
+        elif s[i] in tracked_words and tracked_words[s[i]] != t[i]:
+            return False
     return True
