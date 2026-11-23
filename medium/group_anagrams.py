@@ -1,3 +1,4 @@
+# LeetCode 49
 # Sorted
 def sort_group_anagrams(strs: list[str]) -> list[list[str]]:
     anagrams = {}
